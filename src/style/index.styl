@@ -1,0 +1,32 @@
+@import './consts.styl'
+@import './media.styl'
+@import './text.styl'
+
+@font-face
+  font-family: OnyFuture
+  src: url('../assets/fonts/OnyFuture.woff2') format('woff2'),
+  url('../assets/fonts/OnyFuture.woff') format('woff')
+  font-weight: normal
+  font-style: normal;
+  font-display: fallback
+
+html, body
+	height: 100%
+	width: 100%
+	background: $YELLOW
+	color: $BLACK
+
+:root {
+	font-family: OnyFuture, 'Helvetica Neue', Helvetica, arial, sans-serif
+	font-weight: normal
+  font-size: ($ROOT_FONT_SIZE / $CANONIC_SCREEN_WIDTH * 100) vw
+}
+
++mobile()
+  :root {
+    font-size: ($ROOT_FONT_SIZE / $CANONIC_SCREEN_WIDTH_M * 100) vw
+  }
+
+#app
+	height: 100%
+

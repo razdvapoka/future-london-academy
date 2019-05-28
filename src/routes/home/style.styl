@@ -1,5 +1,9 @@
-.home {
-	padding: 20px;
-	min-height: 100%;
-	width: 100%;
-}
+@import '../../style/utils.styl'
+
+.home
+  padding: 20px
+  min-height: 100%
+  width: 100%
+  childrenSpacingY(pxToRem(50))
+  > p
+    max-width: pxToRem(600)
