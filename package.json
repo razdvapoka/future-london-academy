@@ -11,8 +11,16 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "size": "npm run build && size-limit"
   },
+  "size-limit": [
+    {
+      "limit": "360 ms",
+      "webpack": false,
+      "path": "build/*.js"
+    }
+  ],
   "eslintIgnore": [
     "build/*"
   ],
@@ -31,6 +39,7 @@
     "per-env": "^1.0.2",
     "preact-cli": "^2.1.0",
     "preact-render-spy": "^1.2.1",
+    "size-limit": "^1.3.5",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   },
