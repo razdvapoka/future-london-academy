@@ -1,0 +1,6 @@
+export { default as Fb } from './fb'
+export { default as Tw } from './tw'
+export { default as Ig } from './ig'
+export { default as Yt } from './yt'
+export { default as Li } from './li'
+export { default as Pc } from './pc'
