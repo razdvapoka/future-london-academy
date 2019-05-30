@@ -1,9 +1,13 @@
 import style from './style.styl'
-import Intro from '../../components/intro/index.js'
+import { Intro, What, Who, Understand, Apply } from '../../components'
 
 const Home = () => (
   <div className={style.home}>
     <Intro />
+    <What />
+    <Who />
+    <Understand />
+    <Apply />
   </div>
 )
 

@@ -73,32 +73,44 @@ const Icon = ({ as, ...rest }) => (
   </IconBox>
 )
 
+const Grid = () => (
+  <div className={styles.gridBox}>
+    <div className={styles.grid}>
+      {cells}
+      <Title />
+      <Description />
+      <Slogan />
+      <Apply />
+      <Date />
+    </div>
+  </div>
+)
+
+const Social = () => (
+  <div className={styles.social}>
+    <Icon as={Fb} className={styles.fb} />
+    <Icon as={Tw} className={styles.tw} />
+    <Icon as={Ig} className={styles.ig} />
+    <Icon as={Yt} className={styles.yt} />
+    <Icon as={Li} className={styles.li} />
+    <Icon as={Pc} className={styles.pc} />
+  </div>
+)
+
+const Bottom = () => (
+  <div className={styles.bottom}>
+    <p>
+        ©2019 Future London Academy.{' '}
+      <Tiny as='span' className='upper'>All rights reserved</Tiny>
+    </p>
+    <Social />
+  </div>
+)
+
 const Intro = () => (
   <div className={styles.intro}>
-    <div className={styles.gridBox}>
-      <div className={styles.grid}>
-        {cells}
-        <Title />
-        <Description />
-        <Slogan />
-        <Apply />
-        <Date />
-      </div>
-    </div>
-    <div className={styles.bottom}>
-      <p>
-        ©2019 Future London Academy.{' '}
-        <Tiny as='span' className='upper'>All rights reserved</Tiny>
-      </p>
-      <div className={styles.social}>
-        <Icon as={Fb} className={styles.fb} />
-        <Icon as={Tw} className={styles.tw} />
-        <Icon as={Ig} className={styles.ig} />
-        <Icon as={Yt} className={styles.yt} />
-        <Icon as={Li} className={styles.li} />
-        <Icon as={Pc} className={styles.pc} />
-      </div>
-    </div>
+    <Grid />
+    <Bottom />
   </div>
 )
 
