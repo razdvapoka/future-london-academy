@@ -1,8 +1,8 @@
 import styles from './style.styl'
 import ComponentFromProp from '../component-from-prop'
 import { withClass, cc, range } from '../../utils'
-import { Small, Big, Tiny } from '../text'
-import { Fb, Tw, Ig, Yt, Li, Pc } from '../icons'
+import { Small, Big } from '../text'
+import Footer from '../footer'
 
 const Cell = withClass(
   cc(styles.gridCell, 'centered')
@@ -66,13 +66,6 @@ const createCells = (cols, rows) => range(cols).map(col => range(rows).map(row =
 
 const cells = createCells(8, 4)
 
-const IconBox = withClass(styles.icon)('a')
-const Icon = ({ as, ...rest }) => (
-  <IconBox {...rest}>
-    <ComponentFromProp as={as} width='100%' height='100%' />
-  </IconBox>
-)
-
 const Grid = () => (
   <div className={styles.gridBox}>
     <div className={styles.grid}>
@@ -86,31 +79,10 @@ const Grid = () => (
   </div>
 )
 
-const Social = () => (
-  <div className={styles.social}>
-    <Icon as={Fb} className={styles.fb} />
-    <Icon as={Tw} className={styles.tw} />
-    <Icon as={Ig} className={styles.ig} />
-    <Icon as={Yt} className={styles.yt} />
-    <Icon as={Li} className={styles.li} />
-    <Icon as={Pc} className={styles.pc} />
-  </div>
-)
-
-const Bottom = () => (
-  <div className={styles.bottom}>
-    <p>
-        ©2019 Future London Academy.{' '}
-      <Tiny as='span' className='upper'>All rights reserved</Tiny>
-    </p>
-    <Social />
-  </div>
-)
-
 const Intro = () => (
   <div className={styles.intro}>
     <Grid />
-    <Bottom />
+    <Footer as='div' className={styles.bottom} />
   </div>
 )
 
