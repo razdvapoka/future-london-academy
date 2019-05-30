@@ -1,7 +1,7 @@
 import styles from './style.styl'
 import { Small, Tiny } from '../text'
 import { Fb, Tw, Ig, Yt, Li, Pc } from '../icons'
-import { withClass } from '../../utils'
+import { cc, withClass } from '../../utils'
 import ComponentFromProp, { factory } from '../component-from-prop'
 
 const IconBox = withClass(styles.icon)('a')
@@ -25,6 +25,34 @@ const Social = () => (
 const FooterBox = withClass(styles.footer)(factory('footer'))
 const Column = withClass(styles.column)('div')
 
+const Roles = () => (
+  <Tiny
+    className={cc('upper', styles.roles)}
+    as='div'
+  >
+    <span>
+      design:&nbsp;&nbsp;
+      <a
+        rel='noopener noreferrer'
+        target='_blank'
+        href=''
+      >
+        Svyat Vishnyakov
+      </a>
+    </span>
+    <span>
+      Development:&nbsp;&nbsp;
+      <a
+        rel='noopener noreferrer'
+        target='_blank'
+        href='https://sergeyzakharov.dev'
+      >
+        SERGEY ZAKHAROV
+      </a>
+    </span>
+  </Tiny>
+)
+
 const Footer = ({ hasRoles, ...rest }) => (
   <FooterBox {...rest}>
     <Column>
@@ -36,28 +64,7 @@ const Footer = ({ hasRoles, ...rest }) => (
       </Tiny>
     </Column>
     <Column>
-      {hasRoles && (
-        <div className={styles.roles}>
-          <Tiny
-            className='upper'
-            as='a'
-            rel='noopener noreferrer'
-            target='_blank'
-            href=''
-          >
-            desIgn:&nbsp;&nbsp;Svyat Vishnyakov
-          </Tiny>
-          <Tiny
-            className='upper'
-            as='a'
-            rel='noopener noreferrer'
-            target='_blank'
-            href='https://sergeyzakharov.dev'
-          >
-            Development:&nbsp;&nbsp;SERGEY ZAKHAROV
-          </Tiny>
-        </div>
-      )}
+      {hasRoles && <Roles />}
       <Social />
     </Column>
   </FooterBox>
