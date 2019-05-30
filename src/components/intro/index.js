@@ -67,15 +67,13 @@ const createCells = (cols, rows) => range(cols).map(col => range(rows).map(row =
 const cells = createCells(8, 4)
 
 const Grid = () => (
-  <div className={styles.gridBox}>
-    <div className={styles.grid}>
-      {cells}
-      <Title />
-      <Description />
-      <Slogan />
-      <Apply />
-      <Date />
-    </div>
+  <div className={styles.grid}>
+    {cells}
+    <Title />
+    <Description />
+    <Slogan />
+    <Apply />
+    <Date />
   </div>
 )
 

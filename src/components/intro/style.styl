@@ -1,20 +1,8 @@
 @import '../../style/consts.styl'
 @import '../../style/utils.styl'
 
-.gridBox
-  position: relative
-  &:before
-    display: block
-    content: " "
-    width: 100%
-    padding-top: (1 / 2) * 100%
-
 .grid
-  position: absolute
-  top 0
-  left 0
-  right 0
-  bottom 0
+  height: pxToRem(768)
 
   display: grid
   grid-template-columns: repeat(8, 1fr)
