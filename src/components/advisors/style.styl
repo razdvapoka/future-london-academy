@@ -1,0 +1,58 @@
+@import '../../style/utils.styl'
+
+.sliderBox
+  position: relative
+  height: pxToRem(355)
+  margin-top: pxToRem(80)
+
+.slider
+  position: absolute
+  top: 0
+  bottom: 0
+  left: - pxToRem(30)
+  right: - pxToRem(30)
+  overflow: hidden
+
+.sliderContent
+  display: inline-flex
+  height: 100%
+
+.advisorImg
+  height: 100%
+  mix-blend-mode: multiply
+  margin-left: pxToRem(30)
+
+.buttons
+  display: flex
+  justify-content: flex-end
+  position: absolute
+  right: 0
+  margin-top: pxToRem(15)
+
+.button
+  border: 0
+  outline: 0
+  width: pxToRem(52)
+  height: pxToRem(21)
+
+.button + .button
+  margin-left: pxToRem(75)
+
+.bottom
+  border-top: pxToRem(2) solid black
+  padding-top: pxToRem(26)
+  position: relative
+  display: flex
+
+.name
+  flex: 1
+  transition: opacity 0.15s ease
+  opacity: 1
+
+.nameExiting
+  flex: 1
+  transition: opacity 0.15s ease
+  opacity: 0
+
+.reversed
+  transform: scale(-1, 1)

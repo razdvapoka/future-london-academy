@@ -5,13 +5,15 @@ import {
   Who,
   Understand,
   Apply,
-  Footer
+  Footer,
+  Advisors
 } from '../../components'
 
 const Home = () => (
   <div className={style.home}>
     <Intro />
     <What />
+    <Advisors />
     <Who />
     <Understand />
     <Apply />
