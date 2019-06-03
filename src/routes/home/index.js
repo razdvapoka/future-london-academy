@@ -6,13 +6,15 @@ import {
   Understand,
   Apply,
   Footer,
-  Advisors
+  Advisors,
+  Experts
 } from '../../components'
 
 const Home = () => (
   <div className={style.home}>
     <Intro />
     <What />
+    <Experts />
     <Advisors />
     <Who />
     <Understand />

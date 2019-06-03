@@ -1,6 +1,7 @@
 import styles from './style.styl'
 import { Component } from 'preact'
 import { ArrowRight } from '../icons'
+import { Caption } from '../text'
 
 import ije from '../../assets/images/ije-nwokorie.jpg'
 import helena from '../../assets/images/helena-fuchs.jpg'
@@ -167,7 +168,7 @@ class Advisors extends Component {
     const secondAdvisor = tripledAdvisors[currentNameIndex + 1]
     return (
       <div className={styles.advisors}>
-        <p className='caption'>our advisors</p>
+        <Caption>our advisors</Caption>
         <Slider
           currentSlideIndex={currentSlideIndex}
           hasTransition={hasTransition}
