@@ -1,5 +1,6 @@
 import style from './style.styl'
 import {
+  Building,
   Intro,
   What,
   Who,
@@ -18,6 +19,7 @@ const Home = () => (
     <Advisors />
     <Who />
     <Understand />
+    <Building />
     <Apply />
     <Footer
       className={style.footer}
