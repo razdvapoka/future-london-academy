@@ -8,6 +8,7 @@ const SectionBox = withClass(styles.section)('section')
 const Section = ({
   title,
   text,
+  textComponent: Text = Regular,
   ...rest
 }) => (
   <SectionBox {...rest}>
@@ -20,8 +21,7 @@ const Section = ({
       />
     </Column>
     <Column>
-      <Regular
-        className={styles.text}
+      <Text
         dangerouslySetInnerHTML={{ __html: text }}
       />
     </Column>

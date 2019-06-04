@@ -1,5 +1,6 @@
 import style from './style.styl'
 import {
+  StartDate,
   Form,
   Building,
   Intro,
@@ -21,6 +22,7 @@ const Home = () => (
     <Who />
     <Understand />
     <Building />
+    <StartDate />
     <Apply />
     <Form />
     <Footer
