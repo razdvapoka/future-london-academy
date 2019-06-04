@@ -17,6 +17,9 @@ html, body
 	background: $YELLOW
 	color: $BLACK
 
+:focus
+  outline: none
+
 :root {
 	font-family: OnyFuture, 'Helvetica Neue', Helvetica, arial, sans-serif
 	font-weight: normal
@@ -33,3 +36,16 @@ html, body
 
 h2
   font-weight: normal
+
+.input::-moz-placeholder
+  color: $GREY
+  opacity: 1
+.input::-webkit-input-placeholder  /* WebKit, Blink, Edge */
+  color: $GREY
+.input:-ms-input-placeholder  /* Internet Explorer 10-11 */
+  color: $GREY
+.input::-ms-input-placeholder  /* Microsoft Edge */
+  color: $GREY
+.input::placeholder  /* Most modern browsers support this now. */
+  padding-top: pxToRem(10)
+  color: $GREY

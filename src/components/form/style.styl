@@ -1,0 +1,51 @@
+@import '../../style/utils.styl'
+
+.form
+  display: flex
+  flex-direction: column
+
+.formFieldBox
+  flex: 1
+  position: relative
+  margin-left: pxToRem(45)
+  display: flex
+
+.formFieldBox + .formFieldBox
+  margin-top: pxToRem(70)
+
+.formField
+  flex: 1
+  display: block
+  border: none
+  border-bottom: pxToRem(2) solid $BLACK
+  padding-right: pxToRem(40)
+
+.formFieldIndicator,
+.formFieldIndicatorValid
+  position: absolute
+  right: 0
+  top: 50%
+  transform: translateY(-50%)
+  border-radius: 9999px
+  border: pxToRem(2) solid $BLACK
+  width: pxToRem(22)
+  height: pxToRem(22)
+  transition: background-color 0.3s ease
+
+.formFieldIndicatorValid
+  background-color: $BLACK
+
+.submit
+  margin-top: pxToRem(100)
+  border: none
+  width: pxToRem(725)
+  height: pxToRem(192)
+  background-color: $BLACK
+  color: $YELLOW
+  padding-left: pxToRem(55px)
+  text-align: left
+  padding-top: pxToRem(10px)
+  transition: opacity 0.3s ease
+
+.submit:disabled
+  opacity: 0.5

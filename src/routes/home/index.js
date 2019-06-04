@@ -1,5 +1,6 @@
 import style from './style.styl'
 import {
+  Form,
   Building,
   Intro,
   What,
@@ -21,6 +22,7 @@ const Home = () => (
     <Understand />
     <Building />
     <Apply />
+    <Form />
     <Footer
       className={style.footer}
       hasRoles
