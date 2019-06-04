@@ -32,7 +32,17 @@ const FormField = ({
 )
 
 class Form extends Component {
+  static defaultProps = {
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfGqGkqEcDl-4tWb_42ZYvothFrkZa8nzsdeLr1WsK1It_phw/formResponse',
+    fieldKeys: {
+      email: 'entry.1045781291',
+      name: 'entry.2005620554',
+      phone: 'entry.1166974658'
+    }
+  }
+
   state = {
+    isSubmitted: false,
     name: {
       value: '',
       isValid: null
@@ -88,16 +98,29 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { email, phone, name } = this.state
-    console.log('submit:', {
-      email: email.value,
-      phone: phone.value,
-      name: name.value
-    })
+    const { formUrl, fieldKeys } = this.props
+    const { email, phone, name, isSubmitted } = this.state
+
+    if (!isSubmitted) {
+      const data = new URLSearchParams()
+      data.append(fieldKeys.email, email.value)
+      data.append(fieldKeys.phone, phone.value)
+      data.append(fieldKeys.name, name.value)
+
+      window.fetch(formUrl, {
+        method: 'post',
+        body: data,
+        mode: 'no-cors'
+      }).then(() => {
+        this.setState({
+          isSubmitted: true
+        })
+      })
+    }
   }
 
   render () {
-    const { email, name, phone } = this.state
+    const { email, name, phone, isSubmitted } = this.state
     return (
       <div className={styles.formBox}>
         <form
@@ -125,7 +148,7 @@ class Form extends Component {
             className={styles.submit}
             disabled={!this.canSubmit()}
           >
-            submit
+            {isSubmitted ? 'success!' : 'submit'}
           </Huge>
         </form>
       </div>
