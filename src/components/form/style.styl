@@ -1,4 +1,5 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .form
   display: flex
@@ -9,9 +10,13 @@
   position: relative
   margin-left: pxToRem(45)
   display: flex
+  +mobile()
+    margin-left: pxToRem(0)
 
 .formFieldBox + .formFieldBox
   margin-top: pxToRem(70)
+  +mobile()
+    margin-top: pxToRem(20)
 
 .formField
   flex: 1
@@ -19,6 +24,8 @@
   border: none
   border-bottom: pxToRem(2) solid $BLACK
   padding-right: pxToRem(40)
+  +mobile()
+    border-bottom: pxToRem(1) solid $BLACK
 
 .formFieldIndicator,
 .formFieldIndicatorValid
@@ -31,6 +38,11 @@
   width: pxToRem(22)
   height: pxToRem(22)
   transition: background-color 0.3s ease
+  +mobile()
+    border: pxToRem(1) solid $BLACK
+    width: pxToRem(8)
+    height: pxToRem(8)
+    margin-top: - pxToRem(3)
 
 .formFieldIndicatorValid
   background-color: $BLACK
@@ -46,6 +58,12 @@
   text-align: left
   padding-top: pxToRem(10px)
   transition: opacity 0.3s ease
+  +mobile()
+    margin-top: pxToRem(25)
+    padding-left: pxToRem(15px)
+    width: 100vw
+    transform: translateX(- pxToRem(15))
+    height: pxToRem(80px)
 
 .submit:disabled
   opacity: 0.5

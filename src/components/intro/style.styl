@@ -1,5 +1,6 @@
 @import '../../style/consts.styl'
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .grid
   height: pxToRem(768)
@@ -7,11 +8,19 @@
   display: grid
   grid-template-columns: repeat(8, 1fr)
   grid-template-rows: repeat(4, 1fr)
+  +mobile()
+    height: pxToRem(574)
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(5, 1fr)
 
   border: 1px solid $BLACK
   &Cell
     border: 1px solid $BLACK
     background-color: $YELLOW
+  &CellD
+    desktopOnly()
+  &CellM
+    mobileOnly()
 
 .title
   grid-area: 1 / 1 / 2 / 2
@@ -20,9 +29,14 @@
   grid-area: 3 / 6 / 4 / 9
   p
     max-width: pxToRem(545)
+  +mobile()
+    grid-area: 4 / 2 / 5 / 4
+    p
+      max-width: pxToRem(165)
 
 .description
   grid-area: 1 / 3 / 3 / 5
+  desktopOnly()
   p
     max-width: pxToRem(262)
 
@@ -30,11 +44,17 @@
   grid-area: 4 / 3 / 5 / 5
   background-color: $BLACK
   color: $YELLOW
+  +mobile()
+    grid-area: 4 / 1 / 5 / 2
 
 .date
   grid-area: 1 / 8 / 2 / 9
   span
     transform: rotate(-45deg)
+  +mobile()
+    grid-area: 1 / 3 / 2 / 9
 
 .bottom
   margin-top: pxToRem(50)
+  +mobile()
+    margin-top: pxToRem(45)

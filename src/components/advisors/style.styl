@@ -1,9 +1,17 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
+
+.advisors
+  +mobile()
+    margin-top: pxToRem(70)
 
 .sliderBox
   position: relative
   height: pxToRem(355)
   margin-top: pxToRem(80)
+  +mobile()
+    height: pxToRem(181)
+    margin-top: pxToRem(36)
 
 .slider
   position: absolute
@@ -12,6 +20,9 @@
   left: - pxToRem(30)
   right: - pxToRem(30)
   overflow: hidden
+  +mobile()
+    left: - pxToRem(15)
+    right: - pxToRem(15)
 
 .sliderContent
   display: inline-flex
@@ -28,31 +39,49 @@
   position: absolute
   right: 0
   margin-top: pxToRem(15)
+  +mobile()
+    margin-top: 0
 
 .button
   border: 0
   outline: 0
   width: pxToRem(52)
   height: pxToRem(21)
+  +mobile()
+    width: pxToRem(67)
+    height: pxToRem(27)
+    path
+      stroke-width: 1
 
 .button + .button
   margin-left: pxToRem(75)
+  +mobile()
+    margin-left: pxToRem(10)
 
 .bottom
   border-top: pxToRem(2) solid $BLACK
   padding-top: pxToRem(26)
   position: relative
   display: flex
+  +mobile()
+    border-top: pxToRem(1) solid $BLACK
 
 .name
   flex: 1
   transition: opacity 0.15s ease
   opacity: 1
+  +mobile()
+    min-width: 100%
+
+.name + .name
+  desktopOnly()
 
 .nameExiting
   flex: 1
   transition: opacity 0.15s ease
   opacity: 0
+  +mobile()
+    min-width: 100%
 
 .reversed
   transform: scale(-1, 1)

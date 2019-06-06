@@ -1,7 +1,10 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .experts
   margin-top: pxToRem(30)
+  +mobile()
+    margin-top: pxToRem(60)
 
 .caption
   margin-bottom: pxToRem(20)
@@ -11,9 +14,21 @@
   justify-content: space-between
   height: pxToRem(305)
   border-top: pxToRem(2) solid $BLACK
+  desktopOnly()
 
 .row:last-child
   border-bottom: pxToRem(2) solid $BLACK
+
+.rowM
+  display: none
+  justify-content: space-between
+  height: pxToRem(100)
+  border-top: pxToRem(1) solid $BLACK
+  +mobile()
+    display: flex
+
+.rowM:last-child
+  border-bottom: pxToRem(1) solid $BLACK
 
 .item
   display: block
@@ -25,39 +40,69 @@
 .virgin
   width: pxToRem(115)
   height: pxToRem(101)
+  +mobile()
+    width: pxToRem(53)
+    height: pxToRem(47)
 
 .apple
   width: pxToRem(72)
   height: pxToRem(85)
+  +mobile()
+    width: pxToRem(33)
+    height: pxToRem(39)
 
 .nike
   width: pxToRem(126)
   height: pxToRem(45)
+  +mobile()
+    width: pxToRem(59)
+    height: pxToRem(21)
 
 .wolfOlins
   width: pxToRem(215)
   height: pxToRem(26)
+  +mobile()
+    width: pxToRem(99)
+    height: pxToRem(12)
 
 .microsoft
   width: pxToRem(61)
   height: pxToRem(61)
+  +mobile()
+    width: pxToRem(28)
+    height: pxToRem(28)
 
 .facebook
   width: pxToRem(162)
   height: pxToRem(31)
+  +mobile()
+    width: pxToRem(75)
+    height: pxToRem(14)
 
 .google
   width: pxToRem(100)
   height: pxToRem(102)
+  +mobile()
+    width: pxToRem(46)
+    height: pxToRem(47)
 
 .ustwo
   width: pxToRem(150)
   height: pxToRem(43)
+  +mobile()
+    width: pxToRem(80)
+    height: pxToRem(23)
 
 .pentagram
   width: pxToRem(202)
   height: pxToRem(39)
+  +mobile()
+    width: pxToRem(94)
+    height: pxToRem(18)
 
 .skyscanner
   width: pxToRem(149)
   height: pxToRem(79)
+  +mobile()
+    width: pxToRem(69)
+    height: pxToRem(36)

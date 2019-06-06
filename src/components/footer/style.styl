@@ -1,15 +1,23 @@
 @import '../../style/consts.styl'
+@import '../../style/media.styl'
 @import '../../style/utils.styl'
 
 .footer
   display: flex
   justify-content: space-between
   align-items: flex-end
+  +mobile()
+    margin-top: pxToRem(30)
 
 .column
   flex: 1
   display: flex
   align-items: flex-end
+  +mobile()
+    flex-direction: column
+
+.columnLeft
+  desktopOnly()
 
 .title
   transform: translateY(pxToRem(3))
@@ -20,10 +28,24 @@
   childrenSpacingX(pxToRem(27))
   margin-left: auto
   transform: translateY(-50%)
+  +mobile()
+    width: 100%
+    justify-content: space-between
 
 .roles
   display: flex
   childrenSpacingX(pxToRem(36))
+  +mobile()
+    childrenSpacingX(0)
+    width: 100%
+    margin-bottom: pxToRem(30)
+
+.role
+  +mobile()
+    flex: 1
+    display: flex
+    flex-direction: column
+
 
 .icon
   display: block
@@ -52,3 +74,15 @@
 .pc
   width: pxToRem(16.5)
   height: pxToRem(16.5)
+
+.copyright,
+.copyrightM
+  display: flex
+  align-items: flex-end
+
+.copyrightM
+  display: none
+  +mobile()
+    width: 100%
+    display: flex
+    margin-bottom: pxToRem(30)

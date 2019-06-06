@@ -1,4 +1,5 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .home
   padding: pxToRem(30)
@@ -7,6 +8,10 @@
   childrenSpacingY(pxToRem(50))
   > p
     max-width: pxToRem(600)
+  +mobile()
+    padding: pxToRem(15)
+    padding-bottom: pxToRem(100)
+    childrenSpacingY(pxToRem(45))
 
 .footer
   margin-top: pxToRem(80)

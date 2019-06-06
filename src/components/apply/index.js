@@ -4,7 +4,7 @@ import Section from '../section'
 const Apply = () => (
   <Section
     className={styles.apply}
-    title={`apply<br />now`}
+    title={`apply&nbsp;<br />now`}
     text={`
      Leave your email to get more information
      and be updated when application

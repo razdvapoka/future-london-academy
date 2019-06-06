@@ -1,5 +1,5 @@
 import styles from './style.styl'
-import { Small, Tiny } from '../text'
+import { Small, Tiny, ExtraTiny } from '../text'
 import { Fb, Tw, Ig, Yt, Li, Pc } from '../icons'
 import { cc, withClass } from '../../utils'
 import ComponentFromProp, { factory } from '../component-from-prop'
@@ -30,8 +30,8 @@ const Roles = () => (
     className={cc('upper', styles.roles)}
     as='div'
   >
-    <span>
-      design:&nbsp;&nbsp;
+    <span className={styles.role}>
+      <span>design:&nbsp;&nbsp;</span>
       <a
         rel='noopener noreferrer'
         target='_blank'
@@ -40,8 +40,8 @@ const Roles = () => (
         Svyat Vishnyakov
       </a>
     </span>
-    <span>
-      Development:&nbsp;&nbsp;
+    <span className={styles.role}>
+      <span>Development:&nbsp;&nbsp;</span>
       <a
         rel='noopener noreferrer'
         target='_blank'
@@ -53,17 +53,25 @@ const Roles = () => (
   </Tiny>
 )
 
+const CopyrightBox = withClass(styles.copyright)('div')
+const Copyright = (props) => (
+  <CopyrightBox {...props}>
+    <Small className={styles.title}>
+      ©2019 Future London Academy.{' '}
+    </Small>
+    <ExtraTiny as='span' className='upper'>
+      All rights reserved
+    </ExtraTiny>
+  </CopyrightBox>
+)
+
 const Footer = ({ hasRoles, ...rest }) => (
   <FooterBox {...rest}>
-    <Column>
-      <Small className={styles.title}>
-        ©2019 Future London Academy.{' '}
-      </Small>
-      <Tiny as='span' className='upper'>
-        All rights reserved
-      </Tiny>
+    <Column className={styles.columnLeft}>
+      <Copyright />
     </Column>
     <Column>
+      {hasRoles && <Copyright className={styles.copyrightM} />}
       {hasRoles && <Roles />}
       <Social />
     </Column>

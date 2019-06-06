@@ -1,9 +1,14 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .diagram
   position: relative
   width: pxToRem(728)
   height: pxToRem(728)
+  +mobile()
+    width: pxToRem(342)
+    height: pxToRem(342)
+    margin-top: pxToRem(40)
 
 .item,
 .itemDisabled
@@ -23,20 +28,35 @@
 .world
   width: pxToRem(728)
   height: pxToRem(728)
+  +mobile()
+    width: pxToRem(342)
+    height: pxToRem(342)
 
 .company
   width: pxToRem(576)
   height: pxToRem(576)
+  +mobile()
+    width: pxToRem(271)
+    height: pxToRem(271)
 
 .team
   width: pxToRem(423)
   height: pxToRem(423)
+  +mobile()
+    width: pxToRem(199)
+    height: pxToRem(199)
 
 .product
   width: pxToRem(271)
   height: pxToRem(271)
+  +mobile()
+    width: pxToRem(127)
+    height: pxToRem(127)
 
 .person
   width: pxToRem(119)
   height: pxToRem(119)
+  +mobile()
+    width: pxToRem(56)
+    height: pxToRem(56)
 

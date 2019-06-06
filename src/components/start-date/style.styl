@@ -1,4 +1,22 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .startDate
   margin-top: pxToRem(200)
+  desktopOnly()
+
+.startDateM
+  margin-top: pxToRem(63)
+  display: flex
+  &Content
+    flex: 1
+    display: flex
+    justify-content: space-between
+    margin-left: pxToRem(16)
+
+.point
+  width: pxToRem(28)
+  height: pxToRem(28)
+  background-color: black
+  border-radius: 9999px
+

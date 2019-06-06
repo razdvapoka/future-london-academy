@@ -1,7 +1,7 @@
 import styles from './style.styl'
 import { Component } from 'preact'
 import { ArrowRight } from '../icons'
-import { Caption } from '../text'
+import { Regular, Caption } from '../text'
 
 import ije from '../../assets/images/ije-nwokorie.jpg'
 import helena from '../../assets/images/helena-fuchs.jpg'
@@ -10,6 +10,7 @@ import matt from '../../assets/images/matt-cooper-wright.jpg'
 import michael from '../../assets/images/michael-wolff.jpg'
 
 const ITEM_WIDTH_VW = 44
+const ITEM_WIDTH_VW_M = 80
 const TRANSITION_TIMEOUT = 300
 
 const advisors = [ {
@@ -41,11 +42,12 @@ const tripledAdvisors = [
 ]
 
 const Advisor = ({
-  imageSrc
+  imageSrc,
+  isMobile
 }) => (
   <div
     className={styles.advisor}
-    style={{ width: `${ITEM_WIDTH_VW}vw` }}
+    style={{ width: `${isMobile ? ITEM_WIDTH_VW_M : ITEM_WIDTH_VW}vw` }}
   >
     <img
       className={styles.advisorImg}
@@ -56,24 +58,28 @@ const Advisor = ({
 
 const Slider = ({
   currentSlideIndex,
-  hasTransition
-}) => (
-  <div className={styles.sliderBox}>
-    <div className={styles.slider}>
-      <div
-        className={styles.sliderContent}
-        style={{
-          transform: `translateX(-${ITEM_WIDTH_VW * currentSlideIndex}vw)`,
-          transition: hasTransition ? `transform ${TRANSITION_TIMEOUT}ms ease` : ''
-        }}
-      >
-        {tripledAdvisors.map(advisor => (
-          <Advisor imageSrc={advisor.imageSrc} />
-        ))}
+  hasTransition,
+  isMobile
+}) => {
+  console.log(isMobile)
+  return (
+    <div className={styles.sliderBox}>
+      <div className={styles.slider}>
+        <div
+          className={styles.sliderContent}
+          style={{
+            transform: `translateX(-${(isMobile ? ITEM_WIDTH_VW_M : ITEM_WIDTH_VW) * currentSlideIndex}vw)`,
+            transition: hasTransition ? `transform ${TRANSITION_TIMEOUT}ms ease` : ''
+          }}
+        >
+          {tripledAdvisors.map(advisor => (
+            <Advisor isMobile={isMobile} imageSrc={advisor.imageSrc} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 const Name = ({ advisor, isExiting }) => (
   <div className={isExiting ? styles.nameExiting : styles.name}>
@@ -98,7 +104,8 @@ class Advisors extends Component {
     currentSlideIndex: advisors.length,
     currentNameIndex: advisors.length,
     hasTransition: true,
-    isNameExiting: false
+    isNameExiting: false,
+    isMobile: false
   }
 
   reset = () => {
@@ -162,7 +169,8 @@ class Advisors extends Component {
       currentSlideIndex,
       hasTransition,
       currentNameIndex,
-      isNameExiting
+      isNameExiting,
+      isMobile
     } = this.state
     const firstAdvisor = tripledAdvisors[currentNameIndex]
     const secondAdvisor = tripledAdvisors[currentNameIndex + 1]
@@ -172,17 +180,32 @@ class Advisors extends Component {
         <Slider
           currentSlideIndex={currentSlideIndex}
           hasTransition={hasTransition}
+          isMobile={isMobile}
         />
-        <div className={styles.bottom}>
+        <Regular as='div' className={styles.bottom}>
           <Name advisor={firstAdvisor} isExiting={isNameExiting} />
           <Name advisor={secondAdvisor} isExiting={isNameExiting} />
           <Buttons
             nextSlide={this.nextSlide}
             prevSlide={this.prevSlide}
           />
-        </div>
+        </Regular>
       </div>
     )
+  }
+
+  checkIfMobile = () => {
+    this.setState({
+      isMobile: window.innerWidth <= 600
+    })
+  }
+
+  componentDidMount () {
+    this.checkIfMobile()
+    window.addEventListener('resize', this.checkIfMobile)
+  }
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.checkIfMobile)
   }
 }
 

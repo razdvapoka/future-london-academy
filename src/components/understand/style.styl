@@ -1,5 +1,9 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .understand
   margin-top: pxToRem(170)
-
+  +mobile()
+    margin-top: pxToRem(55)
+    div + div
+      margin-top: 0

@@ -22,6 +22,7 @@ const Section = ({
     </Column>
     <Column>
       <Text
+        className={styles.text}
         dangerouslySetInnerHTML={{ __html: text }}
       />
     </Column>

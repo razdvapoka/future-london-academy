@@ -1,15 +1,22 @@
 @import '../../style/consts.styl'
+@import '../../style/media.styl'
 @import '../../style/utils.styl'
 
 .section
   display: flex
+  +mobile()
+    flex-direction: column
+    childrenSpacingY(pxToRem(48))
+    h2 br
+      hide()
 
 .column
   display: flex
   flex: 1
 
 .text
-  max-width: 75%
+  +mobile()
+    margin-left: pxToRem(43)
 
 .point
   width: pxToRem(62)
@@ -17,4 +24,7 @@
   border-radius: 9999px
   background-color: $BLACK
   margin-right: pxToRem(21)
-
+  +mobile()
+    width: pxToRem(28)
+    height: pxToRem(28)
+    margin-right: pxToRem(15)

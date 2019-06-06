@@ -1,10 +1,15 @@
 @import '../../style/utils.styl'
+@import '../../style/media.styl'
 
 .section
   display: flex
   margin-top: pxToRem(73)
   padding-bottom: pxToRem(64)
   border-bottom: pxToRem(2) solid $BLACK
+  +mobile()
+    flex-direction: column
+    padding-bottom: pxToRem(45)
+    border-bottom: pxToRem(1) solid $BLACK
 
 .column
   flex: 1
@@ -16,10 +21,15 @@
   position: absolute
   top: - pxToRem(45)
   left: pxToRem(8)
+  +mobile()
+    top: - pxToRem(25)
+    left: pxToRem(3)
 
 .list
   position: relative
   list-style-type: none
+  +mobile()
+    margin-left: pxToRem(43)
 
 .item,
 .itemSelected

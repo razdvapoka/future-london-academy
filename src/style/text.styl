@@ -5,33 +5,58 @@
   line-height: (75 / 88)
   letter-spacing: tracking(-40)
   text-transform: uppercase
+  +mobile()
+    font-size: pxToRem(40)
+    line-height: (36 / 40)
 
 .big
   font-size: pxToRem(50)
   line-height: (45 / 50)
   letter-spacing: tracking(-40)
   text-transform: uppercase
+  +mobile()
+    font-size: pxToRem(15)
+    line-height: 1
 
 .regular
   font-size: pxToRem(28)
   line-height: (37 / 28)
+  +mobile()
+    font-size: pxToRem(15)
+    line-height: (19 / 15)
 
 .caption
   font-size: pxToRem(28)
   line-height: (27 / 28)
   letter-spacing: tracking(-40)
   text-transform: uppercase
+  +mobile()
+    font-size: pxToRem(15)
+    line-height: (16 / 15)
 
 .small
   font-size: pxToRem(22)
   line-height: (23 / 22)
   letter-spacing: tracking(-40)
   text-transform: uppercase
+  +mobile()
+    font-size: pxToRem(15)
+    line-height: 1
 
-.tiny
+.tiny,
+.extraTiny
   font-size: pxToRem(10)
   line-height: (12 / 10)
   letter-spacing: tracking(-40)
+
+.tiny
+  +mobile()
+    line-height: (11 / 10)
+
+.extraTiny
+  +mobile()
+    font-size: pxToRem(6)
+    line-height: 1
 
 .underlined
   text-decoration: underline

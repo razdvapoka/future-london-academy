@@ -60,15 +60,22 @@ const Date = () => (
   </Cell>
 )
 
-const createCells = (cols, rows) => range(cols).map(col => range(rows).map(row => <Cell style={{
-  gridArea: `${row + 1} / ${col + 1} / span 1 / span 1`
-}} />))
+const createCells = (cols, rows, isMobile) => range(cols).map(col => range(rows).map(row => (
+  <Cell
+    className={isMobile ? styles.gridCellM : styles.gridCellD}
+    style={{
+      gridArea: `${row + 1} / ${col + 1} / span 1 / span 1`
+    }}
+  />
+)))
 
 const cells = createCells(8, 4)
+const cellsM = createCells(3, 5, true)
 
 const Grid = () => (
   <div className={styles.grid}>
     {cells}
+    {cellsM}
     <Title />
     <Description />
     <Slogan />
