@@ -6,8 +6,10 @@
   desktopOnly()
 
 .startDateM
+  display: none
   margin-top: pxToRem(63)
-  display: flex
+  +mobile()
+    display: flex
   &Content
     flex: 1
     display: flex

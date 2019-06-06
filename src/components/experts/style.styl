@@ -3,8 +3,10 @@
 
 .experts
   margin-top: pxToRem(30)
+  border-bottom: pxToRem(2) solid $BLACK
   +mobile()
     margin-top: pxToRem(60)
+    border-bottom: pxToRem(1) solid $BLACK
 
 .caption
   margin-bottom: pxToRem(20)
@@ -16,9 +18,6 @@
   border-top: pxToRem(2) solid $BLACK
   desktopOnly()
 
-.row:last-child
-  border-bottom: pxToRem(2) solid $BLACK
-
 .rowM
   display: none
   justify-content: space-between
@@ -26,9 +25,6 @@
   border-top: pxToRem(1) solid $BLACK
   +mobile()
     display: flex
-
-.rowM:last-child
-  border-bottom: pxToRem(1) solid $BLACK
 
 .item
   display: block
