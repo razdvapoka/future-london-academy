@@ -1,0 +1,22 @@
+@import '../../style/consts.styl'
+@import '../../style/media.styl'
+@import '../../style/utils.styl'
+
+$initialTransform = translate(pxToRem(14), pxToRem(12))
+
+.point
+  border-radius: 9999px
+  background-color: $BLACK
+  margin-right: pxToRem(52)
+  transition: transform 0.3s ease
+  width: pxToRem(31)
+  height: pxToRem(31)
+  transform: $initialTransform
+  +mobile()
+    margin-right: pxToRem(29)
+    width: pxToRem(14)
+    height: pxToRem(14)
+
+.pointExpanded
+  @extends .point
+  transform: $initialTransform scale(2)

@@ -60,26 +60,23 @@ const Slider = ({
   currentSlideIndex,
   hasTransition,
   isMobile
-}) => {
-  console.log(isMobile)
-  return (
-    <div className={styles.sliderBox}>
-      <div className={styles.slider}>
-        <div
-          className={styles.sliderContent}
-          style={{
-            transform: `translateX(-${(isMobile ? ITEM_WIDTH_VW_M : ITEM_WIDTH_VW) * currentSlideIndex}vw)`,
-            transition: hasTransition ? `transform ${TRANSITION_TIMEOUT}ms ease` : ''
-          }}
-        >
-          {tripledAdvisors.map(advisor => (
-            <Advisor isMobile={isMobile} imageSrc={advisor.imageSrc} />
-          ))}
-        </div>
+}) => (
+  <div className={styles.sliderBox}>
+    <div className={styles.slider}>
+      <div
+        className={styles.sliderContent}
+        style={{
+          transform: `translateX(-${(isMobile ? ITEM_WIDTH_VW_M : ITEM_WIDTH_VW) * currentSlideIndex}vw)`,
+          transition: hasTransition ? `transform ${TRANSITION_TIMEOUT}ms ease` : ''
+        }}
+      >
+        {tripledAdvisors.map(advisor => (
+          <Advisor isMobile={isMobile} imageSrc={advisor.imageSrc} />
+        ))}
       </div>
     </div>
-  )
-}
+  </div>
+)
 
 const Name = ({ advisor, isExiting }) => (
   <div className={isExiting ? styles.nameExiting : styles.name}>

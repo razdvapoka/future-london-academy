@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "defaults.css": "^1.2.0",
+    "intersection-observer": "^0.7.0",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0"
   },

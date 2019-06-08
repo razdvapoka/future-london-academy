@@ -1,6 +1,7 @@
 import styles from './style.styl'
 import { withClass } from '../../utils'
 import { Huge, Regular } from '../text'
+import Point from '../point'
 
 const Column = withClass(styles.column)('div')
 const SectionBox = withClass(styles.section)('section')
@@ -13,7 +14,7 @@ const Section = ({
 }) => (
   <SectionBox {...rest}>
     <Column>
-      {title && <div className={styles.point} />}
+      {title && <Point />}
       <Huge
         as='h2'
         className={styles.title}
