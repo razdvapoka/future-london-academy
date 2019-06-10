@@ -30,17 +30,43 @@ const getItemClassName = (itemIndex, selectedItemIndex) =>
     : styles.item
 
 const Diagram = ({
-  selectedItemIndex
-}) => (
-  <div className={styles.diagram}>
-    {ITEMS.map(({ icon: Icon, className }, itemIndex) => (
-      <div className={getItemClassName(itemIndex, selectedItemIndex)}>
-        <div className={className}>
-          <Icon />
+  selectedItemIndex,
+  selectItem
+}) => {
+  const handleMouseMove = (e) => {
+    const isCursorInItems = ITEMS.map(item => {
+      const rect = document
+        .querySelector(`.${item.className}`)
+        .getBoundingClientRect()
+      const radius = rect.width / 2
+      const centerX = rect.x + radius
+      const centerY = rect.y + radius
+      return (
+        Math.pow(e.clientX - centerX, 2) +
+        Math.pow(e.clientY - centerY, 2)
+      ) < Math.pow(radius, 2)
+    })
+    const index = isCursorInItems.indexOf(true)
+    selectItem(index === -1 ? null : index)
+  }
+  return (
+    <div
+      className={styles.diagram}
+      onMouseLeave={() => selectItem(null)}
+      onMouseMove={handleMouseMove}
+      onClick={handleMouseMove}
+    >
+      {ITEMS.map(({ icon: Icon, className }, itemIndex) => (
+        <div
+          className={getItemClassName(itemIndex, selectedItemIndex)}
+        >
+          <div className={className}>
+            <Icon />
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-)
+      ))}
+    </div>
+  )
+}
 
 export default Diagram

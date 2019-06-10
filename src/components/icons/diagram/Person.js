@@ -8,7 +8,7 @@ const SvgPerson = props => (
       cy={60.35}
       r={59.35}
       fill='none'
-      stroke='#000'
+      stroke='currentColor'
       strokeMiterlimit={10}
       strokeWidth={2}
     />

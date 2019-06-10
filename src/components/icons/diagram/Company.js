@@ -4,7 +4,7 @@ const SvgCompany = props => (
   <svg viewBox='0 0 577.55 577.55' {...props}>
     <defs>
       <style>
-        {'.company_svg__cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}'}
+        {'.company_svg__cls-1{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:2px}'}
       </style>
     </defs>
     <g id='company_svg__Layer_1-2'>

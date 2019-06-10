@@ -3,6 +3,7 @@
 @import '../../style/utils.styl'
 
 $initialTransform = translate(pxToRem(14), pxToRem(12))
+$initialTransformM = translate(pxToRem(8), pxToRem(6))
 
 .point
   border-radius: 9999px
@@ -16,7 +17,10 @@ $initialTransform = translate(pxToRem(14), pxToRem(12))
     margin-right: pxToRem(29)
     width: pxToRem(14)
     height: pxToRem(14)
+    transform: $initialTransformM
 
 .pointExpanded
   @extends .point
   transform: $initialTransform scale(2)
+  +mobile()
+    transform: $initialTransformM scale(2)

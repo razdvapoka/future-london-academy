@@ -4,7 +4,7 @@ const SvgTeam = props => (
   <svg viewBox='0 0 425.26 425.26' {...props}>
     <defs>
       <style>
-        {'.team_svg__cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}'}
+        {'.team_svg__cls-1{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:2px}'}
       </style>
     </defs>
     <g id='team_svg__Layer_1-2'>

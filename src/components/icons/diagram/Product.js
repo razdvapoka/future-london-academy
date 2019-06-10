@@ -4,11 +4,10 @@ const SvgProduct = props => (
   <svg viewBox='0 0 272.98 272.98' {...props}>
     <defs>
       <style>
-        {'.product_svg__cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}'}
+        {'.product_svg__cls-1{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:2px}'}
       </style>
     </defs>
     <g id='product_svg__Layer_1-2'>
-      <circle className='product_svg__cls-1' cx={136.49} cy={136.49} r={59.35} />
       <path
         className='product_svg__cls-1'
         d='M193.44 169.23l55.07 31.8M136.49 70.87V7.27m-56.71 162.1l-55.08 31.8'

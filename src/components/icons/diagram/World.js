@@ -4,7 +4,7 @@ const SvgWorld = props => (
   <svg viewBox='0 0 729.83 729.83' {...props}>
     <defs>
       <style>
-        {'.world_svg__cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}'}
+        {'.world_svg__cls-1{fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:2px}'}
       </style>
     </defs>
     <g id='world_svg__Layer_1-2'>

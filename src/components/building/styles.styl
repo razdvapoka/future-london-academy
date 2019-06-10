@@ -28,8 +28,51 @@
 .list
   position: relative
   list-style-type: none
+  margin-left: pxToRem(100)
   +mobile()
     margin-left: pxToRem(43)
+
+.sideCircle
+  position: absolute
+  left: 0
+  top: 0
+  border: pxToRem(2) solid $BLACK
+  border-radius: 9999px
+  +mobile()
+    display: none
+
+.circleTransition
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
+
+.sideCircle1
+  @extends .sideCircle
+  transform: translate(- pxToRem(60), pxToRem(22))
+  width: pxToRem(13.5)
+  height: pxToRem(13.5)
+
+.sideCircle2
+  @extends .sideCircle
+  transform: translate(- pxToRem(63), pxToRem(93))
+  width: pxToRem(19.5)
+  height: pxToRem(19.5)
+
+.sideCircle3
+  @extends .sideCircle
+  transform: translate(- pxToRem(67.5), pxToRem(165))
+  width: pxToRem(28.7)
+  height: pxToRem(28.7)
+
+.sideCircle4
+  @extends .sideCircle
+  transform: translate(- pxToRem(74.5), pxToRem(232))
+  width: pxToRem(42.7)
+  height: pxToRem(42.7)
+
+.sideCircle5
+  @extends .sideCircle
+  transform: translate(- pxToRem(85), pxToRem(298))
+  width: pxToRem(64)
+  height: pxToRem(64)
 
 .item,
 .itemSelected
