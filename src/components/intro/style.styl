@@ -65,6 +65,9 @@
   animation-duration: 5s
   animation-name: square-rotation
   animation-iteration-count: infinite
+  +mobile()
+    grid-area: 1 / 2 / 2 / 3
+    border: pxToRem(13) solid $BLACK
 
 .circle
   width: 100%
@@ -73,6 +76,8 @@
   min-height: 50%
   border-radius: 9999px
   border: pxToRem(26) solid $BLACK
+  +mobile()
+    border: pxToRem(13) solid $BLACK
 
 .circleBox
   height: 200%
@@ -86,9 +91,13 @@
 .doubleCircle
   grid-area: 3 / 1 / 5 / 3
   overflow: hidden
+  +mobile()
+    grid-area: 5 / 2 / 6 / 3
 
 .flippingCircle
   grid-area: 1 / 7 / 2 / 8
+  +mobile()
+    grid-area: 2 / 1 / 3 / 2
 
 .flippingCircleContent
   border-radius: 9999px
@@ -102,9 +111,13 @@
 
 .blackCircle1
   grid-area: 3 / 4 / 4 / 5
+  +mobile()
+    display: none
 
 .blackCircle2
   grid-area: 4 / 6 / 5 / 7
+  +mobile()
+    display: none
 
 .blackCircleContent
   border-radius: 9999px
@@ -115,6 +128,8 @@
 .emptyRect
   grid-area: 2 / 7 / 3 / 9
   border: pxToRem(26) solid $BLACK
+  +mobile()
+    display: none
 
 .halfCircle1
   grid-area: 1 / 5 / 3 / 6
@@ -123,6 +138,11 @@
     height: 100%
     min-width: 200%
     margin-left: -100%
+  +mobile()
+    grid-area: 2 / 3 / 4 / 4
+    & .halfCircleContent
+      margin-left: 100%
+
 
 .halfCircle2
   grid-area: 2 / 1 / 3 / 3
@@ -131,6 +151,8 @@
     min-height: 200%
     width: 100%
     margin-top: 50%
+  +mobile()
+    display: none
 
 .halfCircleContent
   border-radius: 9999px
