@@ -58,3 +58,118 @@
   margin-top: pxToRem(50)
   +mobile()
     margin-top: pxToRem(45)
+
+.rotatingSquare
+  grid-area: 1 / 2 / 2 / 3
+  border: pxToRem(26) solid $BLACK
+  animation-duration: 5s
+  animation-name: square-rotation
+  animation-iteration-count: infinite
+
+.circle
+  width: 100%
+  height: 50%
+  min-width: 100%
+  min-height: 50%
+  border-radius: 9999px
+  border: pxToRem(26) solid $BLACK
+
+.circleBox
+  height: 200%
+  min-height: 200%
+  width: 100%
+  animation-duration: 5s
+  animation-name: double-circle
+  animation-iteration-count: infinite
+  animation-timing-function: ease
+
+.doubleCircle
+  grid-area: 3 / 1 / 5 / 3
+  overflow: hidden
+
+.flippingCircle
+  grid-area: 1 / 7 / 2 / 8
+
+.flippingCircleContent
+  border-radius: 9999px
+  width: 100%
+  height: 100%
+  background-color: $BLACK
+  animation-name: circle-flip
+  animation-duration: 5s
+  animation-timing-function: ease
+  animation-iteration-count: infinite
+
+.blackCircle1
+  grid-area: 3 / 4 / 4 / 5
+
+.blackCircle2
+  grid-area: 4 / 6 / 5 / 7
+
+.blackCircleContent
+  border-radius: 9999px
+  width: 100%
+  height: 100%
+  background-color: $BLACK
+
+.emptyRect
+  grid-area: 2 / 7 / 3 / 9
+  border: pxToRem(26) solid $BLACK
+
+.halfCircle1
+  grid-area: 1 / 5 / 3 / 6
+  overflow: hidden
+  & .halfCircleContent
+    height: 100%
+    min-width: 200%
+    margin-left: -100%
+
+.halfCircle2
+  grid-area: 2 / 1 / 3 / 3
+  overflow: hidden
+  & .halfCircleContent
+    min-height: 200%
+    width: 100%
+    margin-top: 50%
+
+.halfCircleContent
+  border-radius: 9999px
+  background-color: $BLACK
+
+@keyframes square-rotation {
+  0% {
+    transform: scale(1) rotate(0deg)
+  }
+
+  15% {
+    transform: scale(0.5) rotate(0deg)
+  }
+
+  30% {
+    transform: scale(0.5) rotate(90deg)
+  }
+
+  45%, 100% {
+    transform: scale(1) rotate(90deg)
+  }
+}
+
+@keyframes double-circle {
+  0% {
+    transform: translateY(25%)
+  }
+
+  30%, 100% {
+    transform: translateY(-25%)
+  }
+}
+
+@keyframes circle-flip {
+  0% {
+    transform: rotateX(0deg)
+  }
+
+  50%, 100% {
+    transform: rotateX(180deg)
+  }
+}

@@ -3,6 +3,7 @@ import Section from '../section'
 
 const Apply = () => (
   <Section
+    id='apply'
     className={styles.apply}
     title={`apply&nbsp;<br />now`}
     text={`

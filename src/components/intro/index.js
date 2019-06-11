@@ -44,8 +44,18 @@ const Slogan = () => (
   </Cell>
 )
 
+const scrollToApply = () => {
+  const applySection = document.querySelector('#apply')
+  const { top } = applySection.getBoundingClientRect()
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 const Apply = () => (
-  <Cell className={styles.apply} as='button'>
+  <Cell
+    className={styles.apply}
+    as='button'
+    onClick={scrollToApply}
+  >
     <Big>
       Apply now
     </Big>
@@ -69,6 +79,43 @@ const createCells = (cols, rows, isMobile) => range(cols).map(col => range(rows)
   />
 )))
 
+const RotatingSquare = () => (
+  <Cell className={styles.rotatingSquare} />
+)
+
+const Circle = withClass(styles.circle)('div')
+
+const DoubleCircle = () => (
+  <Cell className={styles.doubleCircle}>
+    <div className={styles.circleBox}>
+      <Circle />
+      <Circle />
+    </div>
+  </Cell>
+)
+
+const FlippingCircle = () => (
+  <Cell className={styles.flippingCircle}>
+    <div className={styles.flippingCircleContent} />
+  </Cell>
+)
+
+const BlackCircle = (props) => (
+  <Cell {...props}>
+    <div className={styles.blackCircleContent} />
+  </Cell>
+)
+
+const EmptyRect = () => (
+  <Cell className={styles.emptyRect} />
+)
+
+const HalfCircle = (props) => (
+  <Cell {...props}>
+    <div className={styles.halfCircleContent} />
+  </Cell>
+)
+
 const cells = createCells(8, 4)
 const cellsM = createCells(3, 5, true)
 
@@ -81,6 +128,14 @@ const Grid = () => (
     <Slogan />
     <Apply />
     <Date />
+    <RotatingSquare />
+    <DoubleCircle />
+    <FlippingCircle />
+    <BlackCircle className={styles.blackCircle1} />
+    <BlackCircle className={styles.blackCircle2} />
+    <EmptyRect />
+    <HalfCircle className={styles.halfCircle1} />
+    <HalfCircle className={styles.halfCircle2} />
   </div>
 )
 
