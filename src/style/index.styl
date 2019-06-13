@@ -3,13 +3,20 @@
 @import './text.styl'
 @import './utils.styl'
 
-@font-face
-  font-family: OnyFuture
+@font-face {
+  font-family: "OnyFuture";
   src: url('../assets/fonts/OnyFuture.woff2') format('woff2'),
-  url('../assets/fonts/OnyFuture.woff') format('woff')
-  font-weight: normal
+    url('../assets/fonts/OnyFuture.woff') format('woff'),
+    url('../assets/fonts/OnyFuture.eot?') format('eot'),
+    url('../assets/fonts/OnyFuture.ttf')  format('truetype');
   font-style: normal;
+  font-weight: normal;
   font-display: fallback
+}
+
+@font-feature-values "OnyFuture" {
+  @stylistic { fancy: 1 }
+}
 
 html, body
 	height: 100%
@@ -24,6 +31,7 @@ html, body
 	font-family: OnyFuture, 'Helvetica Neue', Helvetica, arial, sans-serif
 	font-weight: normal
   font-size: ($ROOT_FONT_SIZE / $CANONIC_SCREEN_WIDTH * 100) vw
+  font-variant-alternates: stylistic(fancy)
 }
 
 +mobile()
