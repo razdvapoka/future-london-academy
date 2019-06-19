@@ -2,14 +2,17 @@
 @import '../../style/media.styl'
 
 .section
-  display: flex
   margin-top: pxToRem(73)
   padding-bottom: pxToRem(64)
   border-bottom: pxToRem(2) solid $BLACK
   +mobile()
-    flex-direction: column
     padding-bottom: pxToRem(45)
     border-bottom: pxToRem(1) solid $BLACK
+
+.sectionContent
+  display: flex
+  +mobile()
+    flex-direction: column
 
 .column
   flex: 1
@@ -42,7 +45,7 @@
     display: none
 
 .circleTransition
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease
 
 .sideCircle1
   @extends .sideCircle
@@ -78,7 +81,13 @@
 .itemSelected
   cursor: pointer
   color: $GREY
-  transition: color 0.3s ease
+  transition: color 0.5s ease
 
 .itemSelected
   color: $BLACK
+
+.caption
+  max-width: 35%
+  margin-bottom: pxToRem(50)
+  +mobile()
+    max-width: 75%

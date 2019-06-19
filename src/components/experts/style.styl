@@ -1,3 +1,4 @@
+@import '../../style/consts.styl'
 @import '../../style/utils.styl'
 @import '../../style/media.styl'
 
@@ -32,6 +33,33 @@
   display: flex
   align-items: center
   justify-content: center
+  position: relative
+  &:hover
+    .circle
+      transform: scale(1)
+      +mobile(0)
+        transform: scale(1) translateX(-50%)
+
+.circle
+  position: absolute
+  left: 0
+  top: 0
+  transition: transform 0.5s ease
+  transform: scale(0)
+  width: 100%
+  height: 100%
+  border-radius: 9999px
+  background-color: $BLACK
+  color: $YELLOW
+  display: flex
+  align-items: center
+  justify-content: center
+  +mobile()
+    transform-origin: left
+    width: pxToRem(100)
+    height: pxToRem(100)
+    left: 50%
+    transform: scale(0) translateX(-50%)
 
 .virgin
   width: pxToRem(115)
@@ -52,7 +80,7 @@
   height: pxToRem(45)
   +mobile()
     width: pxToRem(59)
-    height: pxToRem(21)
+    height: pxToRem(22)
 
 .wolfOlins
   width: pxToRem(215)

@@ -6,7 +6,6 @@ import {
   Intro,
   What,
   Who,
-  Understand,
   Apply,
   Footer,
   Advisors,
@@ -20,7 +19,6 @@ const Home = () => (
     <Experts />
     <Advisors />
     <Who />
-    <Understand />
     <Building />
     <StartDate />
     <Apply />

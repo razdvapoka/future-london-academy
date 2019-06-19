@@ -6,6 +6,7 @@ import {
   Product
 } from '../icons'
 import styles from './style.styl'
+import { cc } from '../../utils'
 
 const ITEMS = [ {
   icon: Person,
@@ -31,7 +32,8 @@ const getItemClassName = (itemIndex, selectedItemIndex) =>
 
 const Diagram = ({
   selectedItemIndex,
-  selectItem
+  selectItem,
+  isActivated = false
 }) => {
   const handleMouseMove = (e) => {
     const isCursorInItems = ITEMS.map(item => {
@@ -51,7 +53,7 @@ const Diagram = ({
   }
   return (
     <div
-      className={styles.diagram}
+      className={isActivated ? styles.diagramActivated : styles.diagram}
       onMouseLeave={() => selectItem(null)}
       onMouseMove={handleMouseMove}
       onClick={handleMouseMove}
@@ -60,7 +62,7 @@ const Diagram = ({
         <div
           className={getItemClassName(itemIndex, selectedItemIndex)}
         >
-          <div className={className}>
+          <div className={cc(styles.itemContent, className)}>
             <Icon />
           </div>
         </div>

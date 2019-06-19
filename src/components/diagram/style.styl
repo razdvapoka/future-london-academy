@@ -5,10 +5,18 @@
   position: relative
   width: pxToRem(728)
   height: pxToRem(728)
+  overflow: hidden
   +mobile()
     width: pxToRem(342)
     height: pxToRem(342)
     margin-top: pxToRem(40)
+
+.diagramActivated
+  @extends .diagram
+  .item
+  .itemDisabled
+    .itemContent
+      transform: rotate(0)
 
 .item,
 .itemDisabled
@@ -20,13 +28,17 @@
   display: flex
   align-items: center
   justify-content: center
-  transition: opacity 0.3s ease
+  transition: opacity 0.5s ease
   pointer-events: none
 
 .itemDisabled
   opacity: 0.3
 
+.itemContent
+  transition: transform 1s ease
+
 .world
+  transform: rotate(20deg)
   width: pxToRem(728)
   height: pxToRem(728)
   +mobile()
@@ -34,6 +46,7 @@
     height: pxToRem(342)
 
 .company
+  transform: rotate(-30deg)
   width: pxToRem(576)
   height: pxToRem(576)
   +mobile()
@@ -41,6 +54,7 @@
     height: pxToRem(271)
 
 .team
+  transform: rotate(40deg)
   width: pxToRem(423)
   height: pxToRem(423)
   +mobile()
@@ -48,6 +62,7 @@
     height: pxToRem(199)
 
 .product
+  transform: rotate(-50deg)
   width: pxToRem(271)
   height: pxToRem(271)
   +mobile()
@@ -55,6 +70,7 @@
     height: pxToRem(127)
 
 .person
+  transform: rotate(60deg)
   width: pxToRem(119)
   height: pxToRem(119)
   +mobile()

@@ -10,12 +10,14 @@ const Section = ({
   title,
   text,
   textComponent: Text = Regular,
+  titleComponent: Title = Huge,
+  hasPoint = true,
   ...rest
 }) => (
   <SectionBox {...rest}>
     <Column>
-      {title && <Point />}
-      <Huge
+      {title && hasPoint && <Point />}
+      <Title
         as='h2'
         className={styles.title}
         dangerouslySetInnerHTML={{ __html: title }}

@@ -24,6 +24,7 @@
   border: none
   border-bottom: pxToRem(2) solid $BLACK
   padding-right: pxToRem(40)
+  border-radius: 0
   +mobile()
     border-bottom: pxToRem(1) solid $BLACK
 
@@ -67,3 +68,18 @@
 
 .submit:disabled
   opacity: 0.5
+
+.success
+  background-color: $BLACK
+  color: $YELLOW
+  padding: pxToRem(60) pxToRem(60) pxToRem(65)
+  margin: 70px 0 0
+  &Text
+    padding-right: pxToRem(150)
+    +mobile()
+      padding-right: 0
+      margin-left: 0
+      margin-top: pxToRem(-20)
+  +mobile()
+    margin: pxToRem(30) pxToRem(-15) 0
+    padding: pxToRem(20)

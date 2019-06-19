@@ -2,7 +2,14 @@ import styles from './style.styl'
 import ComponentFromProp from '../component-from-prop'
 import { withClass, cc, range } from '../../utils'
 import { Small, Big } from '../text'
-import Footer from '../footer'
+import {
+  FbIcon,
+  TwIcon,
+  IgIcon,
+  YtIcon,
+  LiIcon,
+  PcIcon
+} from '../social'
 
 const Cell = withClass(
   cc(styles.gridCell, 'centered')
@@ -116,6 +123,21 @@ const HalfCircle = (props) => (
   </Cell>
 )
 
+const SocialCell = () => (
+  <Cell className={styles.socialCell}>
+    <div className={styles.socialCellRow}>
+      <FbIcon />
+      <TwIcon />
+      <IgIcon />
+    </div>
+    <div className={styles.socialCellRow}>
+      <YtIcon />
+      <LiIcon />
+      <PcIcon />
+    </div>
+  </Cell>
+)
+
 const cells = createCells(8, 4)
 const cellsM = createCells(3, 5, true)
 
@@ -136,13 +158,13 @@ const Grid = () => (
     <EmptyRect />
     <HalfCircle className={styles.halfCircle1} />
     <HalfCircle className={styles.halfCircle2} />
+    <SocialCell />
   </div>
 )
 
 const Intro = () => (
   <div className={styles.intro}>
     <Grid />
-    <Footer as='div' className={styles.bottom} />
   </div>
 )
 

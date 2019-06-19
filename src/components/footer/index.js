@@ -1,24 +1,24 @@
 import styles from './style.styl'
 import { Small, Tiny, ExtraTiny } from '../text'
-import { Fb, Tw, Ig, Yt, Li, Pc } from '../icons'
 import { cc, withClass } from '../../utils'
-import ComponentFromProp, { factory } from '../component-from-prop'
-
-const IconBox = withClass(styles.icon)('a')
-const Icon = ({ as, ...rest }) => (
-  <IconBox {...rest}>
-    <ComponentFromProp as={as} width='100%' height='100%' />
-  </IconBox>
-)
+import { factory } from '../component-from-prop'
+import {
+  FbIcon,
+  TwIcon,
+  IgIcon,
+  YtIcon,
+  LiIcon,
+  PcIcon
+} from '../social'
 
 const Social = () => (
   <div className={styles.social}>
-    <Icon as={Fb} className={styles.fb} />
-    <Icon as={Tw} className={styles.tw} />
-    <Icon as={Ig} className={styles.ig} />
-    <Icon as={Yt} className={styles.yt} />
-    <Icon as={Li} className={styles.li} />
-    <Icon as={Pc} className={styles.pc} />
+    <FbIcon />
+    <TwIcon />
+    <IgIcon />
+    <YtIcon />
+    <LiIcon />
+    <PcIcon />
   </div>
 )
 
@@ -35,7 +35,7 @@ const Roles = () => (
       <a
         rel='noopener noreferrer'
         target='_blank'
-        href=''
+        href='https://vishvish.design/'
       >
         Svyat Vishnyakov
       </a>

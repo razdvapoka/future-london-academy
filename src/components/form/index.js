@@ -2,8 +2,9 @@
 
 import styles from './style.styl'
 import { Component } from 'preact'
-import { Huge } from '../../components/text'
-import { cc } from '../../utils'
+import Section from '../../components/section'
+import { Huge, Regular } from '../../components/text'
+import { withClass, cc } from '../../utils'
 
 const CFIELDS = {
   '29': 'reforig',
@@ -50,6 +51,8 @@ const loadScript = (url, callback) => {
   }
   head.appendChild(script)
 }
+
+const SuccessText = withClass(styles.successText)(Regular)
 
 const FormField = ({
   isValid,
@@ -130,7 +133,8 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (this.canSubmit()) {
+    const { isSubmitted } = this.state
+    if (!isSubmitted && this.canSubmit()) {
       const inputs = Array.from(document.querySelectorAll('#application-form input'))
       const query = inputs.map(({ name, value }) => serializeField(name, value)).join('&')
       loadScript(`https://futurelondonacademy.activehosted.com/proc.php?${query}&jsonp=true`)
@@ -212,6 +216,7 @@ class Form extends Component {
               placeholder='name'
               handleChange={this.handleNameChange}
               required
+              disabled={isSubmitted}
             />
             <FormField
               {...phone}
@@ -219,6 +224,7 @@ class Form extends Component {
               placeholder='phone'
               handleChange={this.handlePhoneChange}
               required
+              disabled={isSubmitted}
             />
             <FormField
               {...email}
@@ -227,16 +233,27 @@ class Form extends Component {
               name='email'
               handleChange={this.handleEmailChange}
               required
+              disabled={isSubmitted}
             />
           </div>
-          <Huge
-            as='button'
-            type='submit'
-            className={styles.submit}
-            disabled={!this.canSubmit()}
-          >
-            {isSubmitted ? 'success!' : 'submit'}
-          </Huge>
+          {isSubmitted ? (
+            <Section
+              className={styles.success}
+              title='thank you!'
+              text={`Your email is now flying through the universe to reach our system and we will send you more information about the programme shortly. Please check your spam or promotions inbox as the email police maybe blocking our message to you :)`}
+              hasPoint={false}
+              textComponent={SuccessText}
+            />
+          ) : (
+            <Huge
+              as='button'
+              type='submit'
+              className={styles.submit}
+              disabled={!this.canSubmit()}
+            >
+              submit
+            </Huge>
+          )}
         </form>
       </div>
     )

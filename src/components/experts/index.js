@@ -1,3 +1,4 @@
+import { Component } from 'preact'
 import styles from './style.styl'
 import { Caption } from '../text'
 import { withClass } from '../../utils'
@@ -82,7 +83,21 @@ const EXPERTS = [ ...EXPERTS_I, ...EXPERTS_II ].reduce((partitioned, expert, exp
 
 const Row = withClass(styles.row)('div')
 const RowM = withClass(styles.rowM)('div')
-const Item = withClass(styles.item)('a')
+const Circle = withClass(styles.circle)(Caption)
+
+class Item extends Component {
+  render () {
+    const { name, className, icon: Icon } = this.props
+    return (
+      <a className={styles.item}>
+        <Circle>
+          {name}
+        </Circle>
+        <Icon className={className} />
+      </a>
+    )
+  }
+}
 
 const Experts = () => (
   <div className={styles.experts}>
@@ -92,27 +107,19 @@ const Experts = () => (
       around the world
     </Caption>
     <Row>
-      {EXPERTS_I.map(({ className, icon: Icon }) => (
-        <Item>
-          <Icon className={className} />
-        </Item>
+      {EXPERTS_I.map((expert) => (
+        <Item {...expert} />
       ))}
     </Row>
     <Row>
-      {EXPERTS_II.map(({ className, icon: Icon }) => (
-        <Item>
-          <Icon className={className} />
-        </Item>
+      {EXPERTS_II.map((expert) => (
+        <Item {...expert} />
       ))}
     </Row>
     {EXPERTS.map(([ expert1, expert2 ]) => (
       <RowM>
-        <Item>
-          <expert1.icon className={expert1.className} />
-        </Item>
-        <Item>
-          <expert2.icon className={expert2.className} />
-        </Item>
+        <Item {...expert1} />
+        <Item {...expert2} />
       </RowM>
     ))}
   </div>
