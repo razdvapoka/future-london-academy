@@ -2,11 +2,6 @@
 <html lang="en">
 	<head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MWBBJ8F');</script>
     <!-- End Google Tag Manager -->
 		<meta charset="utf-8">
 		<title>Future London Academy</title>
@@ -23,12 +18,13 @@
 			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
 		<% } %>
 		<% const filesRegexp = htmlWebpackPlugin.options.inlineCss ? /\.(chunk\.\w{5}\.css|js)$/ : /\.(css|js)$/;%>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MWBBJ8F');</script>
 	</head>
 	<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWBBJ8F"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 		<%= htmlWebpackPlugin.options.ssr() %>
 		<% if (webpack.assets.filter(entry => entry.name.match(/bundle(\.\w{5})?.esm.js$/)).length > 0) { %>
 			<% /* Fix for safari < 11 nomodule bug. TODO: Do the following only for safari. */ %>
@@ -44,5 +40,12 @@
 			<script <%= htmlWebpackPlugin.options.scriptLoading %>  src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
 			<script>window.fetch||document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
 		<% } %>
+    <!-- Google Tag Manager (noscript) -->
+    <div id=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWBBJ8F" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></div>
+    <script type="text/javascript">
+     document.getElementById('noscript').style.display="none";
+    </script>
+    <!-- End Google Tag Manager (noscript) -->
 	</body>
 </html>
