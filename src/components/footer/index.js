@@ -1,5 +1,5 @@
 import styles from './style.styl'
-import { Small, Tiny, ExtraTiny } from '../text'
+import { Alt, Small, Tiny, ExtraTiny } from '../text'
 import { cc, withClass } from '../../utils'
 import { factory } from '../component-from-prop'
 import {
@@ -57,7 +57,7 @@ const CopyrightBox = withClass(styles.copyright)('div')
 const Copyright = (props) => (
   <CopyrightBox {...props}>
     <Small className={styles.title}>
-      ©2019 Future London Academy.{' '}
+      ©2019 F<Alt>u</Alt>t<Alt>u</Alt>re London <Alt>A</Alt>c<Alt>a</Alt>demy.{' '}
     </Small>
     <ExtraTiny as='span' className='upper'>
       All rights reserved

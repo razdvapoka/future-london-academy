@@ -4,7 +4,7 @@ import Section from '../section'
 const Who = () => (
   <Section
     className={styles.who}
-    title={`who&nbsp;<br />is&nbsp;<br />it&nbsp;<br />for`}
+    title={`who&nbsp;<br /><span class="alt">i</span></span>s&nbsp;<br /><span class="alt">i</span></span>t&nbsp;<br />for`}
     text={`
       This programme is specially designed for
       creative leaders with 15+ years of experience. These are usually Creative

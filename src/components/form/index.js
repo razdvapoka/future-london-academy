@@ -3,7 +3,7 @@
 import styles from './style.styl'
 import { Component } from 'preact'
 import Section from '../../components/section'
-import { Huge, Regular } from '../../components/text'
+import { Alt, Huge, Regular } from '../../components/text'
 import { withClass, cc } from '../../utils'
 
 const CFIELDS = {
@@ -170,7 +170,10 @@ class Form extends Component {
 
   successCallback = (id, message, trackcmpUrl) => {
     this.setState({
-      isSubmitted: true
+      isSubmitted: true,
+      email: { isValid: true, value: '' },
+      name: { isValid: true, value: '' },
+      phone: { isValid: true, value: '' }
     })
     if (typeof (trackcmpUrl) !== 'undefined' && trackcmpUrl) {
       // Site tracking URL to use after inline form submission.
@@ -191,7 +194,7 @@ class Form extends Component {
         <form
           onSubmit={this.handleSubmit}
           id='application-form'
-          className={styles.form}
+          className={isSubmitted ? styles.formSubmitted : styles.form}
           noValidate
         >
           <input type='hidden' name='u' value='19' />
@@ -251,7 +254,7 @@ class Form extends Component {
               className={styles.submit}
               disabled={!this.canSubmit()}
             >
-              submit
+              subm<Alt>i</Alt>t
             </Huge>
           )}
         </form>

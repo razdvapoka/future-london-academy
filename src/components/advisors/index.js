@@ -1,7 +1,7 @@
 import styles from './style.styl'
 import { Component } from 'preact'
 import { ArrowRight } from '../icons'
-import { Regular, Caption } from '../text'
+import { Alt, Regular, Caption } from '../text'
 
 import ije from '../../assets/images/ije-nwokorie.jpg'
 import helena from '../../assets/images/helena-fuchs.jpg'
@@ -15,11 +15,11 @@ const TRANSITION_TIMEOUT = 300
 
 const advisors = [ {
   imageSrc: ije,
-  name: 'Ije Nwokorie',
+  name: '<span class="alt">I</span>je Nwokor<span class="alt">i</span>e',
   company: 'Apple'
 }, {
   imageSrc: matt,
-  name: 'Matt Cooper-Wright',
+  name: 'Matt Cooper-Wr<span class="alt">i</span>ght',
   company: 'Ideo'
 }, {
   imageSrc: helena,
@@ -27,11 +27,11 @@ const advisors = [ {
   company: 'Ustwo'
 }, {
   imageSrc: michael,
-  name: 'Michael Wolff',
+  name: 'M<span class="alt">i</span>chael Wolff',
   company: 'Wolff Olins'
 }, {
   imageSrc: joanna,
-  name: 'Joanna Peña-Bickley',
+  name: 'Joanna Peña-B<span class="alt">i</span>ckley',
   company: 'Amazon'
 } ]
 
@@ -80,7 +80,7 @@ const Slider = ({
 
 const Name = ({ advisor, isExiting }) => (
   <div className={isExiting ? styles.nameExiting : styles.name}>
-    <p className='upper'>{advisor.name}</p>
+    <p className='upper' dangerouslySetInnerHTML={{ __html: advisor.name }} />
     <p>{advisor.company}</p>
   </div>
 )
@@ -173,7 +173,7 @@ class Advisors extends Component {
     const secondAdvisor = tripledAdvisors[currentNameIndex + 1]
     return (
       <div className={styles.advisors}>
-        <Caption>our advisors</Caption>
+        <Caption>our adv<Alt>i</Alt>sors</Caption>
         <Slider
           currentSlideIndex={currentSlideIndex}
           hasTransition={hasTransition}

@@ -5,6 +5,10 @@
   display: flex
   flex-direction: column
 
+.formSubmitted
+  @extends .form
+  opacity: 0.5
+
 .formFieldBox
   flex: 1
   position: relative
@@ -49,6 +53,7 @@
   background-color: $BLACK
 
 .submit
+  font-variant-alternates: stylistic(fancy)
   margin-top: pxToRem(100)
   border: none
   width: pxToRem(725)

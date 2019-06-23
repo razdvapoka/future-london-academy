@@ -4,7 +4,7 @@ import styles from './styles.styl'
 import PreactDOM from 'react-dom'
 import { Component } from 'preact'
 import Diagram from '../diagram'
-import { Caption, Huge, Regular } from '../text'
+import { Alt, Caption, Huge, Regular } from '../text'
 import { cc } from '../../utils'
 
 const ITEMS = [ {
@@ -69,9 +69,9 @@ class Building extends Component {
     return (
       <section className={styles.section}>
         <Caption className={styles.caption}>
-          Understand how to lead people and build
-          design-led businesses, while making your
-          life and the world better.
+          Understand how to lead people and bu<Alt>i</Alt>ld
+          design-led bus<Alt>i</Alt>nesses, while mak<Alt>i</Alt>ng your
+          l<Alt>i</Alt>fe and the world better.
         </Caption>
         <div className={styles.sectionContent}>
           <div className={styles.column}>

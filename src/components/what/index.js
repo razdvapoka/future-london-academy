@@ -4,7 +4,7 @@ import Section from '../section'
 const What = () => (
   <Section
     className={styles.what}
-    title={`what&nbsp;<br />is&nbsp;<br />it`}
+    title={`what&nbsp;<br /><span class='alt'>i</span>s&nbsp;<br /><span class='alt'>i</span>t`}
     text={`
         An executive programme broken down
         into 5 intense modules in London,

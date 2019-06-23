@@ -1,7 +1,7 @@
 import styles from './style.styl'
 import ComponentFromProp from '../component-from-prop'
 import { withClass, cc, range } from '../../utils'
-import { Small, Big } from '../text'
+import { Small, Big, Alt } from '../text'
 import {
   FbIcon,
   TwIcon,
@@ -18,25 +18,24 @@ const Cell = withClass(
 const Title = () => (
   <Cell className={styles.title}>
     <Small>
-      FUtUre<br />
+      F<Alt>u</Alt>t<Alt>u</Alt>re<br />
       London<br />
-      AcAdemy
+      <Alt>A</Alt>c<Alt>a</Alt>demy
     </Small>
   </Cell>
 )
-
 const Description = () => (
   <Cell className={styles.description}>
     <Small>
-      ImAgine you coUld
+      <Alt>I</Alt>mAg<Alt>I</Alt>ne you coUld
       learn from the
       leaderS at ApPle,
-      Nike, Google, ViRgin,
-      PentAgram All in One
+      N<Alt>i</Alt>ke, Google, V<Alt>i</Alt>Rg<Alt>i</Alt>n,
+      PentAgram All <Alt>i</Alt>n One
       plAce? Some peoPle
-      call it BauhAus 2.0.
-      We cAll it FUtUre
-      London AcAdemy.
+      call <Alt>i</Alt>t BauhAus 2.0.
+      We cAll <Alt>i</Alt>t F<Alt>u</Alt>t<Alt>u</Alt>re
+      London <Alt>a</Alt>c<Alt>a</Alt>demy.
     </Small>
   </Cell>
 )
@@ -44,9 +43,9 @@ const Description = () => (
 const Slogan = () => (
   <Cell className={styles.slogan}>
     <Big>
-      FInally,  a busIneSs
+      F<Alt>I</Alt>nally,  a bus<Alt>I</Alt>neSs
       programme for
-      desIgn leaders
+      des<Alt>I</Alt>gn leaders
     </Big>
   </Cell>
 )

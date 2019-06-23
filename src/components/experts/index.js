@@ -16,7 +16,7 @@ import {
 } from '../icons'
 
 const EXPERTS_I = [ {
-  name: 'virgin',
+  name: 'v<span class="alt">i</span>rg<span class="alt">i</span>n',
   icon: Virgin,
   className: styles.virgin,
   href: ''
@@ -26,17 +26,17 @@ const EXPERTS_I = [ {
   className: styles.apple,
   href: ''
 }, {
-  name: 'nike',
+  name: 'n<span class="alt">i</span>ke',
   icon: Nike,
   className: styles.nike,
   href: ''
 }, {
-  name: 'wolf olins',
+  name: 'wolf ol<span class="alt">i</span>ns',
   icon: WolfOlins,
   className: styles.wolfOlins,
   href: ''
 }, {
-  name: 'microsoft',
+  name: 'm<span class="alt">i</span>crosoft',
   icon: Microsoft,
   className: styles.microsoft,
   href: ''
@@ -90,9 +90,7 @@ class Item extends Component {
     const { name, className, icon: Icon } = this.props
     return (
       <a className={styles.item}>
-        <Circle>
-          {name}
-        </Circle>
+        <Circle dangerouslySetInnerHTML={{ __html: name }} />
         <Icon className={className} />
       </a>
     )

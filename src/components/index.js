@@ -1,7 +1,6 @@
 export { default as Who } from './who'
 export { default as What } from './what'
 export { default as Intro } from './intro'
-export { default as Understand } from './understand'
 export { default as Apply } from './apply'
 export { default as Footer } from './footer'
 export { default as Advisors } from './advisors'
