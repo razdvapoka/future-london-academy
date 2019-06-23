@@ -29,7 +29,9 @@
   height: 100%
 
 .advisorImg
-  height: 100%
+  height: pxToRem(355)
+  +mobile()
+    height: pxToRem(181)
   mix-blend-mode: multiply
   margin-left: pxToRem(30)
   background-repeat: no-repeat
