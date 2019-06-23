@@ -49,9 +49,9 @@ const Advisor = ({
     className={styles.advisor}
     style={{ width: `${isMobile ? ITEM_WIDTH_VW_M : ITEM_WIDTH_VW}vw` }}
   >
-    <img
+    <div
       className={styles.advisorImg}
-      src={imageSrc}
+      style={{ backgroundImage: `url(${imageSrc})` }}
     />
   </div>
 )

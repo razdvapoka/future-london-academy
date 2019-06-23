@@ -62,7 +62,7 @@ const Apply = () => (
     as='button'
     onClick={scrollToApply}
   >
-    <Big>
+    <Big className={styles.applyText}>
       Apply now
     </Big>
   </Cell>
