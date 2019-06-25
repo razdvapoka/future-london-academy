@@ -57,13 +57,21 @@ const SuccessText = withClass(styles.successText)(Regular)
 const FormField = ({
   isValid,
   handleChange,
+  hasHint,
+  value,
   ...rest
 }) => (
   <div className={styles.formFieldBox}>
+    {hasHint && (
+      <div className={styles.formFieldHint}>
+        <Regular>{value}</Regular>
+      </div>
+    )}
     <Huge as='input'
       className={cc(styles.formField, 'input')}
       type='text'
       onInput={handleChange}
+      value={value}
       {...rest}
     />
     <div
@@ -101,7 +109,8 @@ class Form extends Component {
     this.setState({
       email: {
         value,
-        isValid: this.validateEmail(value)
+        isValid: this.validateEmail(value),
+        hasHint: value.length > (window.innerWidth > 600 ? 23 : 10)
       }
     })
   }

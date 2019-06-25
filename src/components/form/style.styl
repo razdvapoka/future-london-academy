@@ -7,7 +7,8 @@
 
 .formSubmitted
   @extends .form
-  opacity: 0.5
+  .formFieldBox
+    opacity: 0.5
 
 .formFieldBox
   flex: 1
@@ -29,6 +30,14 @@
   border-bottom: pxToRem(2) solid $BLACK
   padding-right: pxToRem(40)
   border-radius: 0
+  &Hint
+    position: absolute
+    left: 0
+    bottom: pxToRem(-50)
+    max-width: 100vw - pxToRem(150)
+    overflow: hidden
+    +mobile()
+      bottom: pxToRem(-20)
   +mobile()
     border-bottom: pxToRem(1) solid $BLACK
 
