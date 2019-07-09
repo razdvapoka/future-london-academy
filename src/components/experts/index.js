@@ -31,7 +31,7 @@ const EXPERTS_I = [ {
   className: styles.nike,
   href: ''
 }, {
-  name: 'wolf ol<span class="alt">i</span>ns',
+  name: 'wolff ol<span class="alt">i</span>ns',
   icon: WolfOlins,
   className: styles.wolfOlins,
   href: ''
