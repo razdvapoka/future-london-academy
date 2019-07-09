@@ -58,6 +58,7 @@ class SuccessSection extends Component {
   render () {
     return (
       <Section
+        id='success'
         className={styles.success}
         title='thank you!'
         text={`Your email is now flying through the universe to reach our system and we will send you more information about the programme shortly. Please check your spam or promotions inbox as the email police maybe blocking our message to you :)`}
@@ -74,9 +75,14 @@ class SuccessSection extends Component {
   }
 
   componentDidMount () {
+    const successSection = document.querySelector('#success')
+    const { top } = successSection.getBoundingClientRect()
+    window.scrollTo({ top: window.scrollY + top, behavior: 'smooth' })
     document.querySelector('html').classList.add('black-bg')
-    window.addEventListener('scroll', this.handleScroll)
-    window.addEventListener('mousemove', this.handleScroll)
+    setTimeout(() => {
+      window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener('mousemove', this.handleScroll)
+    }, 1000)
   }
 
   componentWillUnmount () {

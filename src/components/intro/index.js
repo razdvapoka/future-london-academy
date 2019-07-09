@@ -53,7 +53,7 @@ const Slogan = () => (
 const scrollToApply = () => {
   const applySection = document.querySelector('#apply')
   const { top } = applySection.getBoundingClientRect()
-  window.scrollTo({ top, behavior: 'smooth' })
+  window.scrollTo({ top: top + window.scrollY, behavior: 'smooth' })
 }
 
 const Apply = () => (
