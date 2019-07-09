@@ -3,25 +3,16 @@ import { Component } from 'preact'
 import { ArrowRight } from '../icons'
 import { Alt, Regular, Caption } from '../text'
 
-import ije from '../../assets/images/ije-nwokorie.jpg'
 import helena from '../../assets/images/helena-fuchs.jpg'
 import joanna from '../../assets/images/joanna-peña-bickley.jpg'
-import matt from '../../assets/images/matt-cooper-wright.jpg'
 import michael from '../../assets/images/michael-wolff.jpg'
+import james from '../../assets/images/james-hilton.jpg'
 
 const ITEM_WIDTH_VW = 44
 const ITEM_WIDTH_VW_M = 80
 const TRANSITION_TIMEOUT = 300
 
 const advisors = [ {
-  imageSrc: ije,
-  name: '<span class="alt">I</span>je Nwokor<span class="alt">i</span>e',
-  company: 'Apple'
-}, {
-  imageSrc: matt,
-  name: 'Matt Cooper-Wr<span class="alt">i</span>ght',
-  company: 'Ideo'
-}, {
   imageSrc: helena,
   name: 'Helena Fuchs',
   company: 'Ustwo'
@@ -33,6 +24,10 @@ const advisors = [ {
   imageSrc: joanna,
   name: 'Joanna Peña-B<span class="alt">i</span>ckley',
   company: 'Amazon'
+}, {
+  imageSrc: james,
+  name: 'James H<span class="alt">i</span>lton',
+  company: 'AKQA/Native'
 } ]
 
 const tripledAdvisors = [
