@@ -54,6 +54,37 @@ const loadScript = (url, callback) => {
 
 const SuccessText = withClass(styles.successText)(Regular)
 
+class SuccessSection extends Component {
+  render () {
+    return (
+      <Section
+        className={styles.success}
+        title='thank you!'
+        text={`Your email is now flying through the universe to reach our system and we will send you more information about the programme shortly. Please check your spam or promotions inbox as the email police maybe blocking our message to you :)`}
+        hasPoint={false}
+        textComponent={SuccessText}
+      />
+    )
+  }
+
+  handleScroll = () => {
+    document.querySelector('html').classList.remove('black-bg')
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('mousemove', this.handleScroll)
+  }
+
+  componentDidMount () {
+    document.querySelector('html').classList.add('black-bg')
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('mousemove', this.handleScroll)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('mousemove', this.handleScroll)
+  }
+}
+
 const FormField = ({
   isValid,
   handleChange,
@@ -249,13 +280,7 @@ class Form extends Component {
             />
           </div>
           {isSubmitted ? (
-            <Section
-              className={styles.success}
-              title='thank you!'
-              text={`Your email is now flying through the universe to reach our system and we will send you more information about the programme shortly. Please check your spam or promotions inbox as the email police maybe blocking our message to you :)`}
-              hasPoint={false}
-              textComponent={SuccessText}
-            />
+            <SuccessSection />
           ) : (
             <Huge
               as='button'

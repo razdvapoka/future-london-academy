@@ -18,6 +18,9 @@
   @stylistic { fancy: 1 }
 }
 
+html
+  transition: background-color 0.5s ease
+
 html, body
 	height: 100%
 	width: 100%
@@ -71,3 +74,16 @@ h2
 .input:-webkit-autofill:focus
   -webkit-text-fill-color: $BLACK
   -webkit-box-shadow: 0 0 0px 1000px $YELLOW inset
+
+.black-bg
+  background-color: $BLACK
+  .input::-moz-placeholder
+    color: $BLACK
+  .input::-webkit-input-placeholder  /* WebKit, Blink, Edge */
+    color: $BLACK
+  .input:-ms-input-placeholder  /* Internet Explorer 10-11 */
+    color: $BLACK
+  .input::-ms-input-placeholder  /* Microsoft Edge */
+    color: $BLACK
+  .input::placeholder  /* Most modern browsers support this now. */
+    color: $BLACK
