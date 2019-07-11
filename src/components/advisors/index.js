@@ -168,7 +168,7 @@ class Advisors extends Component {
     const secondAdvisor = tripledAdvisors[currentNameIndex + 1]
     return (
       <div className={styles.advisors}>
-        <Caption>our adv<Alt>i</Alt>sors</Caption>
+        <Caption>FOUND<Alt>I</Alt>NG COMM<Alt>I</Alt>TTEE</Caption>
         <Slider
           currentSlideIndex={currentSlideIndex}
           hasTransition={hasTransition}

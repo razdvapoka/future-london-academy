@@ -7,8 +7,8 @@ const Who = () => (
     title={`who&nbsp;<br /><span class="alt">i</span></span>s&nbsp;<br /><span class="alt">i</span></span>t&nbsp;<br />for`}
     text={`
       This programme is specially designed for
-      creative leaders with 15+ years of experience. These are usually Creative
-      Directors, Design Directors, Heads of UX,
+      creative leaders with 15+ years of experience. These are usually CEOs,
+      Creative Directors, Design Directors, Heads of UX,
       Product Owners and Innovation
       Managers who want to be better leaders
       and take their career to a new level.<br /><br />

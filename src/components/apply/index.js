@@ -8,7 +8,7 @@ const Apply = () => (
     title={`apply&nbsp;<br />now`}
     text={`
      Leave your email to get more information
-     and be updated when application
+     and be updated when the application
      process starts. The earlier you apply the
      better chance you will have to join us in
      2020.<br /><br />
