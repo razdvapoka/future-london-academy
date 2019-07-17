@@ -7,27 +7,37 @@ import helena from '../../assets/images/helena-fuchs.jpg'
 import joanna from '../../assets/images/joanna-peña-bickley.jpg'
 import michael from '../../assets/images/michael-wolff.jpg'
 import james from '../../assets/images/james-hilton.jpg'
+import francesca from '../../assets/images/francesca.jpg'
+import luke from '../../assets/images/luke.jpg'
 
 const ITEM_WIDTH_VW = 44
 const ITEM_WIDTH_VW_M = 80
 const TRANSITION_TIMEOUT = 300
 
 const advisors = [ {
-  imageSrc: helena,
-  name: 'Helena Fuchs',
-  company: 'Ustwo'
+  imageSrc: joanna,
+  name: 'Joanna Peña-B<span class="alt">i</span>ckley',
+  company: 'Amazon'
 }, {
   imageSrc: michael,
   name: 'M<span class="alt">i</span>chael Wolff',
   company: 'Wolff Olins'
 }, {
-  imageSrc: joanna,
-  name: 'Joanna Peña-B<span class="alt">i</span>ckley',
-  company: 'Amazon'
+  imageSrc: helena,
+  name: 'Helena Fuchs',
+  company: 'ustwo'
 }, {
   imageSrc: james,
   name: 'James H<span class="alt">i</span>lton',
   company: 'AKQA/Native'
+}, {
+  imageSrc: francesca,
+  name: 'Francesca Cuda',
+  company: 'ustwo'
+}, {
+  imageSrc: luke,
+  name: 'Luke Powell',
+  company: 'Pentagram'
 } ]
 
 const tripledAdvisors = [
