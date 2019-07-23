@@ -16,7 +16,7 @@ const CFIELDS = {
   '35': 'utmcontent'
 }
 const EMAIL_REGEX = /[^@]+@[^\.]+\..+/
-const PHONE_REGEX = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
+// const PHONE_REGEX = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
 
 const getUrlParam = (name) => {
   var regexStr = '[\?&]' + name + '=([^&#]*)'
@@ -139,7 +139,7 @@ class Form extends Component {
 
   validateEmail = (email) => EMAIL_REGEX.test(email)
   validateName = (name) => name && name.length > 0
-  validatePhone = (phone) => PHONE_REGEX.test(phone)
+  validatePhone = (phone) => phone && phone.length > 0 // PHONE_REGEX.test(phone)
 
   handleEmailChange = (e) => {
     const value = e.target.value
